@@ -4,7 +4,8 @@
     "user_ids": {
         "4130644805": {
             "precense_tracker": true,
-            "friends_tracker": true
+            "friends_tracker": true,
+            "currently_wearing_tracker": true
         }
     }
 }
