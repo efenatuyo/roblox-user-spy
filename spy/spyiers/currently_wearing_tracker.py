@@ -27,7 +27,7 @@ async def track(self, user_id, proxy):
                     await session.post(self.config['webhook'], json=embed_data)
                     data["wearing"][user_id].append(wearing)
                     database.write(data)
-            for wearing in data["wearing"][user_id]:
+            for wearing in data["wearing"][user_id].copy():
                 if wearing not in currently_wearing:
                     embed_data = {"embeds": [{"title": "User Tracker | New Asset Not Wearing", "fields": [{"name": "Asset Link", "value": f"[Asset](https://www.roblox.com/catalog/{wearing})", "inline": False}, {"name": "User Profile", "value": f"[Profile](https://www.roblox.com/users/{str(user_id)}/profile)", "inline": False}]}]}
                     await session.post(self.config['webhook'], json=embed_data)

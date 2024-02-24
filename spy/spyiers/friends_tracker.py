@@ -32,7 +32,7 @@ async def track(self, user_id, proxy):
             all_friends = []
             for friend in friends:
                 all_friends.append(str(friend['id']))
-            for friend in data["friends"][user_id]:
+            for friend in data["friends"][user_id].copy():
                 if friend not in all_friends:
                     embed_data = {"embeds": [{"title": "User Tracker | Friends Removed", "fields": [{"name": "Friend User Profile", "value": f"[Profile](https://www.roblox.com/users/{friend}/profile)", "inline": False}, {"name": "User Profile", "value": f"[Profile](https://www.roblox.com/users/{str(user_id)}/profile)", "inline": False}]}]}
                     await session.post(self.config['webhook'], json=embed_data)
