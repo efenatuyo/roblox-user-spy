@@ -5,7 +5,8 @@
         "4130644805": {
             "precense_tracker": true,
             "friends_tracker": true,
-            "currently_wearing_tracker": true
+            "currently_wearing_tracker": true,
+            "badges_tracker": true
         }
     }
 }
