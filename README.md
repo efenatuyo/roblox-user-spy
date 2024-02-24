@@ -15,6 +15,7 @@ this project will spy on a given user notifying every change on their profile
 *this will change after every update*
 - `User Presence`
 - `User Friends`
+- `Currently Wearing`
 
   
 ## Star History
