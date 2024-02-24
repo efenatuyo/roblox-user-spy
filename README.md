@@ -12,9 +12,9 @@ this project will spy on a given user notifying every change on their profile
 - `aiohttp`
 
 ## spyiers
-
+*this will change after every update*
 - `User Presence`
-- more coming soon
+- `User Friends`
 
   
 ## Star History
