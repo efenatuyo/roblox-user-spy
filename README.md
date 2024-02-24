@@ -7,7 +7,7 @@ this project will spy on a given user notifying every change on their profile
 - Python Version: 3.x
 - Platform: Windows
 
-## Python Modules Used
+## Python Modules Used (not pre installed)
 
 - `aiohttp`
 
