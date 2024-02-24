@@ -2,7 +2,7 @@
 this project will spy on a given user notifying every change on their profile
 
 
-# Specs
+## Specs
 
 - Python Version: 3.x
 - Platform: Windows
@@ -11,5 +11,11 @@ this project will spy on a given user notifying every change on their profile
 
 - `aiohttp`
 
+## spyiers
+
+- `User Presence`
+- more coming soon
+
+  
 ## Star History
 [![Star History Chart](https://api.star-history.com/svg?repos=efenatuyo/roblox-user-spy&type=Date)](https://star-history.com/#efenatuyo/roblox-user-spy&Date)
