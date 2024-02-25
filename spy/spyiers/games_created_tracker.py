@@ -43,7 +43,7 @@ async def track(self, user_id, proxy):
                     if key in game and game[key] != value:
                         differences[key] = {'old': value, 'new': game[key], 'key': key}
                 for difference in differences:
-                    embed_data = {"embeds": [{"title": f"User Tracker | Game Changed {difference}", "fields": [{"name": "Changes", "value": f"from **{differences[difference]['old']}** to **{differences[difference]['new']}**", "inline": False}, {"name": "Game Link", "value": f"[Game](https://www.roblox.com/games/{str(game['rootPlace']['id'])})", "inline": False}, {"name": "User Profile", "value": f"[Profile](https://www.roblox.com/users/{str(user_id)}/profile)", "inline": False}]}]}
+                    embed_data = {"embeds": [{"title": f"User Tracker | Game Changed {difference}", "fields": [{"name": "Changes", "value": f"from {'**' + differences[difference]['old'] + '**' if differences[difference]['old'] else ''} to {'**' + differences[difference]['new'] + '**' if differences[difference]['new'] else ''}", "inline": False}, {"name": "Game Link", "value": f"[Game](https://www.roblox.com/games/{str(game['rootPlace']['id'])})", "inline": False}, {"name": "User Profile", "value": f"[Profile](https://www.roblox.com/users/{str(user_id)}/profile)", "inline": False}]}]}
                     await session.post(self.config['webhook'], json=embed_data)
                     data["games_created"][user_id][str(game["rootPlace"]["id"])][differences[difference]['key']] = differences[difference]['new']
                     database.write(data)
