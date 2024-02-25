@@ -36,7 +36,7 @@ async def track(self, user_id, proxy):
                 if group not in all_groupds:
                     embed_data = {"embeds": [{"title": "User Tracker | Group Left", "fields": [{"name": "Badge Link", "value": f"[Group](https://www.roblox.com/groups/{group}/xolo)", "inline": False}, {"name": "User Profile", "value": f"[Profile](https://www.roblox.com/users/{str(user_id)}/profile)", "inline": False}]}]}
                     await session.post(self.config['webhook'], json=embed_data)
-                    del data["badges"][user_id][group]
+                    del data["groups"][user_id][group]
                     database.write(data)
                         
         except Exception as e:
