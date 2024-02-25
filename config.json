@@ -8,7 +8,8 @@
             "currently_wearing_tracker": true,
             "badges_tracker": true,
             "games_created_tracker": true,
-            "profile_tracker": true
+            "profile_tracker": true,
+            "groups_tracker": true
         }
     }
 }
