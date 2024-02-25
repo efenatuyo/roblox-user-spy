@@ -19,6 +19,7 @@ this project will spy on a given user notifying every change on their profile
 - `Badges`
 - `Games Created | Updated`
 - `Profile Update`
+- `Groups`
 
   
 ## Star History
