@@ -12,7 +12,7 @@ this project will spy on a given user notifying every change on their profile
 - `aiohttp`
 
 ## spyiers
-*this will change after every update*
+*a new spyier will be added every 5 stars*
 - `User Presence`
 - `User Friends`
 - `Currently Wearing`
