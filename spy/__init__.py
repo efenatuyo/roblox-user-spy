@@ -1,6 +1,5 @@
 import os, random, asyncio
 
-from . import cookie
 from . import proxy
 from .spyiers import precense_tracker
 from .spyiers import friends_tracker
@@ -23,7 +22,6 @@ class spyier:
         if os.name != 'nt':
             raise OSError("This code is only supported on Windows.")
         
-        cookie.check(config["cookie"])
         self.config = config
         self.setup_users()
         self.precense_users = self.split(self.precense_users)
