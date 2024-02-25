@@ -6,7 +6,8 @@
             "precense_tracker": true,
             "friends_tracker": true,
             "currently_wearing_tracker": true,
-            "badges_tracker": true
+            "badges_tracker": true,
+            "games_created_tracker": true
         }
     }
 }
