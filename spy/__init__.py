@@ -6,12 +6,14 @@ from .spyiers import precense_tracker
 from .spyiers import friends_tracker
 from .spyiers import currently_wearing_tracker
 from .spyiers import badges_tracker
+from .spyiers import games_created_tracker
 
 class spyier:
     precense_users: list = []
     friends_users: list = []
     currently_wearing_users: list = []
     badges_users: list = []
+    games_created_users: list = []
     userPresenceType: list = ['Offline', 'Online', 'In Game', 'In Studio', 'Invisible']
     def __init__(self, config):
         if os.name != 'nt':
@@ -21,7 +23,7 @@ class spyier:
         self.config = config
         self.setup_users()
         self.precense_users = self.split(self.precense_users)
-        self.proxies = proxy.make(len(self.precense_users) + len(self.friends_users) + len(self.currently_wearing_users) + len(self.badges_users))
+        self.proxies = proxy.make(len(self.precense_users) + len(self.friends_users) + len(self.currently_wearing_users) + len(self.badges_users) + len(self.games_created_users))
     
     @staticmethod
     def split(input_list: list, max_len: int = 200):
@@ -40,6 +42,8 @@ class spyier:
                 self.currently_wearing_users.append(user)
             if config.get("badges_tracker"):
                 self.badges_users.append(user)
+            if config.get("games_created_tracker"):
+                self.games_created_users.append(user)
     
     async def start(self):
         tasks = []
@@ -59,5 +63,9 @@ class spyier:
             proxy = random.choice(self.proxies)
             self.proxies.remove(proxy)
             tasks.append(badges_tracker.track(self, user_id, proxy))
+        for user_id in self.games_created_users:
+            proxy = random.choice(self.proxies)
+            self.proxies.remove(proxy)
+            tasks.append(games_created_tracker.track(self, user_id, proxy))
             
         await asyncio.gather(*tasks)

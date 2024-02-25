@@ -15,7 +15,7 @@ async def track(self, user_id, proxy):
     while True:
         try:
             currently_wearing = await get_currently_wearing(session, user_id, proxy)
-            if not currently_wearing: continue
+            if currently_wearing is False: continue
             data = database.read()
             if user_id not in data["wearing"]:
                 data["wearing"][user_id] = currently_wearing
